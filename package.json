@@ -9,12 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "katex": "^0.16.28",
     "next": "16.1.6",
+    "next-mdx-remote": "^5.0.0",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/katex": "^0.16.8",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
