@@ -177,3 +177,12 @@ public/                # Static assets
 - No test suite currently implemented
 - Dark mode is automatic via system preference (no manual toggle)
 - Habits tracker is read-only in UI - edits via JSON file only
+
+## Git Workflow - CRITICAL
+
+**ALWAYS** commit and push changes after completing tasks. Follow these steps:
+1. Stage files: `git add <files>` (or `git add -A` for all changes)
+2. Commit with descriptive message: `git commit -m "message"`
+3. Push to remote: `git push`
+
+This is a MANDATORY step - never consider a task complete without committing and pushing the changes.
