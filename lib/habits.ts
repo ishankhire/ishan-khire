@@ -1,15 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 
-const habitsPath = path.join(process.cwd(), 'data/habits.json');
-
 export type HabitStatus = 'complete' | 'incomplete' | 'na';
 
 export interface HabitsData {
   habits: Record<string, HabitStatus>;
 }
 
-export function getHabitsData(): Record<string, HabitStatus> {
+export function getHabitsData(filename: string = 'habits.json'): Record<string, HabitStatus> {
+  const habitsPath = path.join(process.cwd(), 'data', filename);
   const data = fs.readFileSync(habitsPath, 'utf8');
   return JSON.parse(data).habits;
 }

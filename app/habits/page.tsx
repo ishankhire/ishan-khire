@@ -1,8 +1,11 @@
-import { getHabitsData, calculateStreak, getMonthDays } from '@/lib/habits';
+import { getHabitsData, calculateStreak, getMonthDays, HabitStatus } from '@/lib/habits';
 
 export default function HabitsPage() {
-  const habits = getHabitsData();
-  const streak = calculateStreak(habits);
+  const habits1 = getHabitsData('habits.json');
+  const streak1 = calculateStreak(habits1);
+
+  const habits2 = getHabitsData('habits2.json');
+  const streak2 = calculateStreak(habits2);
 
   const now = new Date();
   const currentMonth = now.getMonth();
@@ -14,7 +17,7 @@ export default function HabitsPage() {
   const currentMonthDays = getMonthDays(currentYear, currentMonth);
   const nextMonthDays = getMonthDays(nextYear, nextMonth);
 
-  const renderMonth = (days: Date[], monthName: string) => (
+  const renderMonth = (days: Date[], monthName: string, habitsData: Record<string, HabitStatus>) => (
     <div>
       <h2 className="text-lg font-medium mb-4 text-zinc-900 dark:text-zinc-50">
         {monthName}
@@ -22,7 +25,7 @@ export default function HabitsPage() {
       <div className="grid grid-cols-7 gap-1">
         {days.map((day) => {
           const dateStr = day.toISOString().split('T')[0];
-          const status = habits[dateStr] || 'incomplete';
+          const status = habitsData[dateStr] || 'incomplete';
           const dayOfMonth = day.getDate();
 
           const colorClass = {
@@ -72,13 +75,13 @@ export default function HabitsPage() {
           </p>
           <p className="text-sm text-zinc-900 dark:text-zinc-50">
             Current Streak:{' '}
-            <span className="font-semibold text-green-500">{streak} days</span>
+            <span className="font-semibold text-green-500">{streak1} days</span>
           </p>
         </div>
 
         <div className="flex gap-8 flex-wrap">
-          {renderMonth(currentMonthDays, currentMonthName)}
-          {renderMonth(nextMonthDays, nextMonthName)}
+          {renderMonth(currentMonthDays, currentMonthName, habits1)}
+          {renderMonth(nextMonthDays, nextMonthName, habits1)}
         </div>
       </div>
 
@@ -89,13 +92,13 @@ export default function HabitsPage() {
           </p>
           <p className="text-sm text-zinc-900 dark:text-zinc-50">
             Current Streak:{' '}
-            <span className="font-semibold text-green-500">0 days</span>
+            <span className="font-semibold text-green-500">{streak2} days</span>
           </p>
         </div>
 
         <div className="flex gap-8 flex-wrap">
-          {renderMonth(currentMonthDays, currentMonthName)}
-          {renderMonth(nextMonthDays, nextMonthName)}
+          {renderMonth(currentMonthDays, currentMonthName, habits2)}
+          {renderMonth(nextMonthDays, nextMonthName, habits2)}
         </div>
       </div>
     </div>
