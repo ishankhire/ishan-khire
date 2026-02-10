@@ -65,19 +65,38 @@ export default function HabitsPage() {
         Habits
       </h1>
 
-      <div className="mb-6">
-        <p className="text-sm mb-2 text-zinc-600 dark:text-zinc-400">
-          Days without youtube, social media, video games, etc. I think that all of these things will make my life worse at the margin, and I want to quit entirely. Starting as of February 9th, 2026, 1:29 am.
-        </p>
-        <p className="text-sm text-zinc-900 dark:text-zinc-50">
-          Current Streak:{' '}
-          <span className="font-semibold text-green-500">{streak} days</span>
-        </p>
+      <div className="mb-12">
+        <div className="mb-6">
+          <p className="text-sm mb-2 text-zinc-600 dark:text-zinc-400">
+            Days without youtube, social media, video games, etc. I think that all of these things will make my life worse at the margin, and I want to quit entirely. Starting as of February 9th, 2026, 1:29 am.
+          </p>
+          <p className="text-sm text-zinc-900 dark:text-zinc-50">
+            Current Streak:{' '}
+            <span className="font-semibold text-green-500">{streak} days</span>
+          </p>
+        </div>
+
+        <div className="flex gap-8 flex-wrap">
+          {renderMonth(currentMonthDays, currentMonthName)}
+          {renderMonth(nextMonthDays, nextMonthName)}
+        </div>
       </div>
 
-      <div className="flex gap-8 flex-wrap">
-        {renderMonth(currentMonthDays, currentMonthName)}
-        {renderMonth(nextMonthDays, nextMonthName)}
+      <div className="mb-12">
+        <div className="mb-6">
+          <p className="text-sm mb-2 text-zinc-600 dark:text-zinc-400">
+            Placeholder habit description. Replace this with your actual habit tracking goal and start date.
+          </p>
+          <p className="text-sm text-zinc-900 dark:text-zinc-50">
+            Current Streak:{' '}
+            <span className="font-semibold text-green-500">0 days</span>
+          </p>
+        </div>
+
+        <div className="flex gap-8 flex-wrap">
+          {renderMonth(currentMonthDays, currentMonthName)}
+          {renderMonth(nextMonthDays, nextMonthName)}
+        </div>
       </div>
     </div>
   );
