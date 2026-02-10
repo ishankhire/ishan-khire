@@ -20,6 +20,15 @@ export function calculateStreak(habits: Record<string, HabitStatus>): number {
   let streak = 0;
   const currentDate = new Date(today);
 
+  // Check today first
+  const todayStr = currentDate.toISOString().split('T')[0];
+  const todayStatus = habits[todayStr];
+
+  // If today hasn't been logged yet (undefined or incomplete), start from yesterday
+  if (todayStatus !== 'complete') {
+    currentDate.setDate(currentDate.getDate() - 1);
+  }
+
   while (true) {
     const dateStr = currentDate.toISOString().split('T')[0];
     const status = habits[dateStr];
