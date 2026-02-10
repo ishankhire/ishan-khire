@@ -88,7 +88,7 @@ export default function HabitsPage() {
       <div className="mb-12">
         <div className="mb-6">
           <p className="text-sm mb-2 text-zinc-600 dark:text-zinc-400">
-            Placeholder habit description. Replace this with your actual habit tracking goal and start date.
+            Do a specific meditation for at least 7 minutes every day. Starting as of February 10th, 2026, 12:51 am, but I'm still counting this as Feb 9th.
           </p>
           <p className="text-sm text-zinc-900 dark:text-zinc-50">
             Current Streak:{' '}
