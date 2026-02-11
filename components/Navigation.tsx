@@ -21,6 +21,12 @@ export function Navigation() {
       >
         Habits
       </Link>
+      <Link
+        href="/work-log"
+        className="text-zinc-600 hover:text-zinc-900 hover:underline dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+      >
+        Work Log
+      </Link>
     </nav>
   );
 }
