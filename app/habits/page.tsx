@@ -7,6 +7,9 @@ export default function HabitsPage() {
   const habits2 = getHabitsData('habits2.json');
   const streak2 = calculateStreak(habits2);
 
+  const habits3 = getHabitsData('habits3.json');
+  const streak3 = calculateStreak(habits3);
+
   const now = new Date();
   const currentMonth = now.getMonth();
   const currentYear = now.getFullYear();
@@ -99,6 +102,23 @@ export default function HabitsPage() {
         <div className="flex gap-8 flex-wrap">
           {renderMonth(currentMonthDays, currentMonthName, habits2)}
           {renderMonth(nextMonthDays, nextMonthName, habits2)}
+        </div>
+      </div>
+
+      <div className="mb-12">
+        <div className="mb-6">
+          <p className="text-sm mb-2 text-zinc-600 dark:text-zinc-400">
+            Third habit description. Starting as of February 10th, 2026.
+          </p>
+          <p className="text-sm text-zinc-900 dark:text-zinc-50">
+            Current Streak:{' '}
+            <span className="font-semibold text-green-500">{streak3} days</span>
+          </p>
+        </div>
+
+        <div className="flex gap-8 flex-wrap">
+          {renderMonth(currentMonthDays, currentMonthName, habits3)}
+          {renderMonth(nextMonthDays, nextMonthName, habits3)}
         </div>
       </div>
     </div>
