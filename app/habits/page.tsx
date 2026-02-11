@@ -108,7 +108,7 @@ export default function HabitsPage() {
       <div className="mb-12">
         <div className="mb-6">
           <p className="text-sm mb-2 text-zinc-600 dark:text-zinc-400">
-            Third habit description. Starting as of February 10th, 2026.
+            Sleep everyday before 11:30pm. Sleep good, no sleep bad. Starting as of February 10th, 11pm.
           </p>
           <p className="text-sm text-zinc-900 dark:text-zinc-50">
             Current Streak:{' '}
