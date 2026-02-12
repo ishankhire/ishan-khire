@@ -132,11 +132,9 @@ export default function WorkLogPage() {
 
       {/* Helper text */}
       <p className="mt-6 text-sm text-zinc-500 dark:text-zinc-500">
-        Last 7 days of work logged. Edit{' '}
-        <code className="text-xs bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded">
-          data/worklog.json
-        </code>{' '}
-        to update entries.
+        Last 7 days of work logged. It's a bit arbitrary how I count time worked.
+        E.g., English lecture doesn't count, but English homework or CS lecture does.
+        I'm aiming for ~5 hours per day in an average week.
       </p>
     </div>
   );
